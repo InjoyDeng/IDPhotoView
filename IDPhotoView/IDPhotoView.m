@@ -258,11 +258,11 @@ static CGFloat id_currentSystemVersion;
         case IDPhotoViewContentModeScaleAspectFillToTop:
             [self adjustScrollViewContentOffsetAlignment:IDScrollViewContentOffsetAlignmentTop];
             break;
-        
+            
         case IDPhotoViewContentModeScaleAspectFillToLeft:
             [self adjustScrollViewContentOffsetAlignment:IDScrollViewContentOffsetAlignmentLeft];
             break;
-        
+            
         case IDPhotoViewContentModeScaleAspectFillToBottom:
             [self adjustScrollViewContentOffsetAlignment:IDScrollViewContentOffsetAlignmentBottom];
             break;
@@ -288,13 +288,13 @@ static CGFloat id_currentSystemVersion;
     self.scrollView.maximumZoomScale = 1.0;
     switch (self.contentMode) {
         case IDPhotoViewContentModeScaleAspectFill:
-        case IDPhotoViewContentModeScaleAspectFillToTop:
         case IDPhotoViewContentModeScaleAspectFillToLeft:
-        case IDPhotoViewContentModeScaleAspectFillToBottom:
         case IDPhotoViewContentModeScaleAspectFillToRight:
             self.scrollView.minimumZoomScale = MIN(1.0, maxRatio);
             break;
             
+        case IDPhotoViewContentModeScaleAspectFillToBottom:
+        case IDPhotoViewContentModeScaleAspectFillToTop:
         case IDPhotoViewContentModeScaleAspectFit:
         default:
             self.scrollView.minimumZoomScale = MIN(1.0, minRatio);
